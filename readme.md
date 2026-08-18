@@ -4,4 +4,8 @@ Includes a modern intercae written in rust, so you know it is memory safe and bl
 ## Sell your CSVs as NFTs!
 Using state of the art technology, you can sell your CSV files as NFTs!
 
->!(for legal reasons this is a joke, pressing the button simply sets a timer for 5 seconds)!<
+
+## Notes
+1. This project was made for me to elarn more about iced and cross compiling. It is not for any actual purpose
+2. Even if you do use this, it can only view files, not edit them
+3. The NFT seller obviously is not real
