@@ -1,0 +1,27 @@
+id: io.github.smoothturtle872.CSVViewer
+runtime: org.freedesktop.Platform
+runtime-version: '25.08'
+sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.rust-stable
+command: csv-viewer
+finish-args:
+  - --socket=wayland
+  - --socket=x11
+  - --device=dri
+build-options:
+  append-path: /usr/lib/sdk/rust-stable/bin
+  env:
+    CARGO_HOME: /run/build/csv-viewer/cargo
+modules:
+  - name: csv-viewer
+    buildsystem: simple
+    build-commands:
+      # Run cargo in offline mode leveraging the pre-fetched sources
+      - cargo --offline build --release --verbose
+      # Manually install the resulting binary into the flatpak sandbox path
+      - install -Dm755 target/release/csv-viewer /app/bin/csv-viewer
+    sources:
+      - type: dir
+        path: .
+      - cargo-sources.yaml
