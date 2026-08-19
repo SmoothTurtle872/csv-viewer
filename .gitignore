@@ -1,5 +1,6 @@
 /target
 /build-dir
+/repo
 csv-viewer.flatpak
 cargo-sources.yaml
 flatpak-cargo-generator.py
